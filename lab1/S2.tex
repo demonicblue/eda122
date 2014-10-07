@@ -13,9 +13,11 @@ The centralized architecture relies on the Central Unit (CU) to execute the cont
 The distributed architecture relies on executing the control algorithm locally for each wheel unit. In this architecture the wheel units are more complex than in the centralized architecture approach. The wheel units are similar to the central unit in terms of complexity but suffers from a higher failure rate than the central unit since they are more vulnerable to vibrations, moisture and temperature cycling.
 In this section you describe the two modes of operation of the system; full functionality and degraded functionality.
 \subsubsection{Full Functionality}
-/text/
+The first mode of operation is full functionality. In order to provide full functionality, the central unit, all four wheel units and at least one system bus must be working.
 \subsubsection{Degraded Functionality}
-/text/
+The second mode of operation is degraded functionality. In this mode, the system can no longer issue the brake command for one of the wheels. Because of this, the system is only 
+operational if three wheel units, the central unit and at least one system bus are working. For a more simple analysis, the system is considered to have failed catastrophicly
+if the system is unable to send its brake command to two or more wheels.
 \subsection{Assumptions and modeling parameters}
 /text/
 \begin{table}[h]
