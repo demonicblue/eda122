@@ -7,12 +7,10 @@
 The system used in this laboration is implemented in either two configurations; centralized and distributed architectures. There are also two modes of operation, namely full and degraded functionality. Assumptions and modeling parameters for the two architectures described below apply to their respective configurations.
 
 \subsection{Centralized Architecture}
-The centralized architecture relies on the Central Unit (CU) to execute the control algorithm. The wheel units only contain sensors and actuators communicating with the CU over the communication network. With this approach the wheel units contain less hardware and become less complex, leading to lower failure rates.\\
+The centralized architecture relies on the Central Unit (CU) to execute the control algorithm. The wheel units only contain sensors and actuators communicating with the CU over the communication network. With this approach the wheel units contain less hardware and become less complex, leading to lower failure rates in the wheel units. However, the central unit is more complex in this architecture since it requires more processing power and memory, which results in a higher failure rate of the central unit.\\
 \\
-Instead the central unit becomes more complex, requiring more processing power and more memory, thus leading to a higher failure rate.
 \subsection{Distributed Architecture}
-/text/
-\subsection{Modes of Operation}
+The distributed architecture relies on executing the control algorithm locally for each wheel unit. In this architecture the wheel units are more complex than in the centralized architecture approach. The wheel units are similar to the central unit in terms of complexity but suffers from a higher failure rate than the central unit since they are more vulnerable to vibrations, moisture and temperature cycling.
 In this section you describe the two modes of operation of the system; full functionality and degraded functionality.
 \subsubsection{Full Functionality}
 /text/
