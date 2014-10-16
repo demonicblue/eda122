@@ -4,18 +4,18 @@
 %----------------------------------------------------------------------------------------
 \newpage
 \section{Overview of the Candidate Architecture}
-The system used in this laboration is implemented in either two configurations; centralized and distributed architectures. There are also two modes of operation, namely full and degraded functionality. Assumptions and modeling parameters for the two architectures described below apply to their respective configurations. 
+The system used in this laboration is implemented in either two configurations; centralized and distributed architectures. There are also two modes of operation which will be taken into consideration for the two architectures, namely full and degraded functionality. Assumptions and modeling parameters for the two architectures described below apply to their respective configurations. 
 
 \subsection{Centralized Architecture}
 The centralized architecture relies heavily on the Central Unit (CU) to execute the control algorithm. The wheel units only contain sensors and actuators communicating with the CU over the communication network. With this approach the wheel units contain less hardware and become less complex, leading to lower failure rates in the wheel units. However, the central unit is more complex in this architecture since it requires more processing power and memory, which results in a higher failure rate of the central unit.\\
 \\
 \subsection{Distributed Architecture}
-The distributed architecture relies on executing the control algorithm locally for each wheel unit. In this architecture the wheel units are more complex than in the centralized architecture approach. The wheel units are similar to the central unit in terms of complexity but suffers from a higher failure rate than the central unit since they are more vulnerable to vibrations, moisture and temperature cycling. 
+In comparsion to the Centralized architecture, the distributed architecture instead relies on executing the control algorithm locally for each wheel unit. In addition, for this architecture the wheel units are more complex than in the centralized architecture. The wheel units are similar to the central unit in terms of complexity but suffers from a higher failure rate than the central unit since they are more vulnerable to vibrations, moisture and temperature cycling. 
 \subsubsection{Full Functionality}
-The first mode of operation is full functionality. This is the standard mode of operation for the system. In order to provide full functionality, the central unit, all four wheel units and at least one system bus must be working.
+The system uses two modes of operation which will be analyzed in this report.
+The first mode of operation is full functionality which is the standard mode of operation for the system. In order to provide full functionality for the system, the central unit, all four wheel units and at least one system bus must be operational.
 \subsubsection{Degraded Functionality}
-The second mode of operation is degraded functionality. In this mode, the system can no longer issue the brake command for one of the wheels. Because of this, the system is only 
-operational if three wheel units, the central unit and at least one system bus are working. For a more simple analysis, the system is considered to have failed catastrophicly
+The second mode of operation is degraded functionality. In this mode, the system can no longer issue the brake command for one of the wheels. As a result, the system is only considered operational if three wheel units, the central unit and at least one system bus are operational. In order to simplify the analysis, the system is considered to have failed catastrophicly
 if the system is unable to send its brake command to two or more wheels.
 \subsection{Assumptions and modeling parameters}
 The table below holds the assumed failure rate of the modules in the brake-by-wire system and their coverage for the centralized architecture and respectively the distributed architecture.  
@@ -25,15 +25,15 @@ The table below holds the assumed failure rate of the modules in the brake-by-wi
 \hline 
 Subsystem & Part & Failure rate & Coverage\\
 \hline
-System bus & Serial bus& FailureRate & 1\\
+System bus & Serial bus& $5*10^{-7}$ & 1\\
 \hline
-Wheel unit & Computer module & FailureRate & 1\\
+Wheel unit & Computer module & $15*10^{-6}$ & 1\\
 \hline
-Wheel unit & Sensor & FailureRate & 1\\
+Wheel unit & Sensor & $2*10^{-6}$ & 1\\
 \hline
-Wheel unit & Actuator & FailureRate & 1\\
+Wheel unit & Actuator & $1*10^{-6}$ & 1\\
 \hline
-Central unit & Computer module & FailureRate & 0.99\\
+Central unit & Computer module & $8*10^{-6}$ & 0.99\\
 \hline
 \end{tabular}
 \caption{Failure rates and coverage factors for the distributed architecture}
@@ -45,15 +45,15 @@ Central unit & Computer module & FailureRate & 0.99\\
 \hline 
 Subsystem & Part & Failure rate & Coverage\\
 \hline
-System bus & Serial bus& FailureRate & 1\\
+System bus & Serial bus& $5*10^{-7}$ & 1\\
 \hline
-Wheel unit & Computer module & FailureRate & 1\\
+Wheel unit & Computer module & $10*10^{-6}$ & 1\\
 \hline
-Wheel unit & Sensor & FailureRate & 1\\
+Wheel unit & Sensor & $2*10^{-6}$ & 1\\
 \hline
-Wheel unit & Actuator & FailureRate & 1\\
+Wheel unit & Actuator & $1*10^{-6}$ & 1\\
 \hline
-Central unit & Computer module & FailureRate & First CM failure:1 Second CM failure: 0.99\\
+Central unit & Computer module & $10*10^{-6}$ & First CM failure:1 Second CM failure: 0.99\\
 \hline
 \end{tabular}
 \caption{Failure rates and coverage factors for the Centralized Architecture}
